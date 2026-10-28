@@ -229,9 +229,8 @@ export default function Configuracoes() {
         </form>
 
         <p className={styles.securityNote}>
-          Esta aplicação é local e não possui recuperação de senha por email. Se esquecer a senha,
-          será necessário remover manualmente a chave <code>emerson_pinturas_auth</code> nas
-          ferramentas de desenvolvimento do navegador e definir uma nova senha na configuração inicial.
+          A senha é definida uma vez para o sistema. Nos acessos seguintes, use essa mesma senha.
+          Pode alterá-la aqui se souber a senha actual.
         </p>
       </div>
 

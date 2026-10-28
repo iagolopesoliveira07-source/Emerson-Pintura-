@@ -1,3 +1,4 @@
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import { getStorageItem, setStorageItem } from './storageService';
 
 export const AUTH_STORAGE_KEY = 'emerson_pinturas_auth';
@@ -49,7 +50,17 @@ function saveAuthConfig(config) {
   setStorageItem(AUTH_STORAGE_KEY, config);
 }
 
-export function isPasswordConfigured() {
+function useRemoteAuth() {
+  return Boolean(isSupabaseConfigured && supabase);
+}
+
+export async function isPasswordConfigured() {
+  if (useRemoteAuth()) {
+    const { data, error } = await supabase.rpc('senha_esta_configurada');
+    if (error) throw error;
+    return data === true;
+  }
+
   const config = getAuthConfig();
   return Boolean(config?.configured && config?.passwordHash && config?.salt);
 }
@@ -71,6 +82,18 @@ export function clearSession() {
 }
 
 export async function setupPassword(password) {
+  if (useRemoteAuth()) {
+    const { data, error } = await supabase.rpc('definir_senha', { senha: password });
+    if (error) throw error;
+    if (data !== true) {
+      const already = new Error('A senha já foi definida. Entre com essa senha.');
+      already.code = 'already_configured';
+      throw already;
+    }
+    createSession();
+    return;
+  }
+
   const salt = generateSalt();
   const passwordHash = await derivePasswordHash(password, salt);
 
@@ -96,6 +119,14 @@ export async function verifyPassword(password) {
 }
 
 export async function loginWithPassword(password) {
+  if (useRemoteAuth()) {
+    const { data, error } = await supabase.rpc('entrar_com_senha', { senha: password });
+    if (error) return { error: 'Não foi possível iniciar sessão.' };
+    if (data !== true) return { error: 'Senha incorreta.' };
+    createSession();
+    return { error: null };
+  }
+
   const valid = await verifyPassword(password);
 
   if (!valid) {
@@ -107,6 +138,16 @@ export async function loginWithPassword(password) {
 }
 
 export async function changePassword(currentPassword, newPassword) {
+  if (useRemoteAuth()) {
+    const { data, error } = await supabase.rpc('alterar_senha', {
+      senha_atual: currentPassword,
+      senha_nova: newPassword,
+    });
+    if (error) return { error: 'Não foi possível alterar a senha.' };
+    if (data !== true) return { error: 'Senha actual incorrecta.' };
+    return { error: null };
+  }
+
   const valid = await verifyPassword(currentPassword);
 
   if (!valid) {

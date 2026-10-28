@@ -16,9 +16,27 @@ export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    setIsConfigured(isPasswordConfigured());
-    setIsAuthenticated(isSessionActive());
-    setLoading(false);
+    let active = true;
+
+    (async () => {
+      try {
+        const configured = await isPasswordConfigured();
+        if (!active) return;
+        setIsConfigured(configured);
+        setIsAuthenticated(configured && isSessionActive());
+      } catch (error) {
+        console.error('[Auth] Erro ao verificar a senha do sistema:', error);
+        if (!active) return;
+        setIsConfigured(false);
+        setIsAuthenticated(false);
+      } finally {
+        if (active) setLoading(false);
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   const setupPassword = useCallback(async (password, confirmPassword) => {
@@ -37,6 +55,11 @@ export function AuthProvider({ children }) {
       return { error: null };
     } catch (error) {
       console.error('[Auth] Erro ao definir senha:', error);
+      if (error?.code === 'already_configured') {
+        setIsConfigured(true);
+        setIsAuthenticated(false);
+        return { error: error.message };
+      }
       return { error: 'Não foi possível definir a senha.' };
     }
   }, []);
