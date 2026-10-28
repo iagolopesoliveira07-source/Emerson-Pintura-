@@ -1,7 +1,7 @@
 -- Senha única do sistema. Não fica no navegador.
 -- Executar depois de 002_rls_policies.sql
 
-create extension if not exists pgcrypto;
+create extension if not exists pgcrypto with schema extensions;
 
 create table if not exists public.app_senha (
   id int primary key default 1 check (id = 1),
@@ -16,7 +16,7 @@ returns boolean
 language sql
 stable
 security definer
-set search_path = public
+set search_path = public, extensions
 as $$
   select exists (select 1 from public.app_senha where id = 1);
 $$;
@@ -25,7 +25,7 @@ create or replace function public.definir_senha(senha text)
 returns boolean
 language plpgsql
 security definer
-set search_path = public
+set search_path = public, extensions
 as $$
 begin
   if senha is null or char_length(senha) < 4 then
@@ -37,7 +37,7 @@ begin
   end if;
 
   insert into public.app_senha (id, password_hash)
-  values (1, crypt(senha, gen_salt('bf')));
+  values (1, extensions.crypt(senha, extensions.gen_salt('bf')));
   return true;
 exception
   when unique_violation then
@@ -50,13 +50,13 @@ returns boolean
 language sql
 stable
 security definer
-set search_path = public
+set search_path = public, extensions
 as $$
   select exists (
     select 1
     from public.app_senha
     where id = 1
-      and password_hash = crypt(senha, password_hash)
+      and password_hash = extensions.crypt(senha, password_hash)
   );
 $$;
 
@@ -64,7 +64,7 @@ create or replace function public.alterar_senha(senha_atual text, senha_nova tex
 returns boolean
 language plpgsql
 security definer
-set search_path = public
+set search_path = public, extensions
 as $$
 begin
   if not public.entrar_com_senha(senha_atual) then
@@ -76,7 +76,7 @@ begin
   end if;
 
   update public.app_senha
-  set password_hash = crypt(senha_nova, gen_salt('bf')),
+  set password_hash = extensions.crypt(senha_nova, extensions.gen_salt('bf')),
       configured_at = now()
   where id = 1;
   return true;
