@@ -1,0 +1,189 @@
+.desktopTable {
+  display: block;
+}
+
+.mobileCards {
+  display: none;
+}
+
+.debtCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.debtCardHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.debtClient {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.debtCardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.debtCardGrid span {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: 0.125rem;
+}
+
+.debtCardGrid strong {
+  font-size: var(--text-sm);
+}
+
+.debtCardActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.linkButton:hover {
+  text-decoration: underline;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 2rem 1rem;
+}
+
+.totalBanner {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  border: 1px solid #fdba74;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.totalBannerLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: #9a3412;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.totalBannerValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c2410c;
+  line-height: 1.2;
+}
+
+.totalBannerHint {
+  font-size: var(--text-xs);
+  color: #9a3412;
+}
+
+.saldoCell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+}
+
+.saldoLabel {
+  font-size: var(--text-xs);
+  color: #9a3412;
+  font-weight: 500;
+}
+
+.restanteDestaque {
+  color: #c2410c;
+  font-weight: 700;
+}
+
+.debtCardHighlight {
+  grid-column: 1 / -1;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: var(--radius-md);
+  padding: 0.625rem 0.75rem;
+}
+
+.paymentSummary {
+  background: var(--color-bg-muted, #f8fafc);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+  margin-bottom: 1rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.paymentSummary strong {
+  color: var(--color-text);
+}
+
+.paymentSummaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.paymentSummaryGrid span {
+  display: block;
+  font-size: var(--text-xs);
+  margin-bottom: 0.125rem;
+}
+
+@media (max-width: 640px) {
+  .paymentSummaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .totalBannerValue {
+    font-size: 1.625rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .desktopTable {
+    display: none;
+  }
+
+  .mobileCards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .debtCardActions {
+    flex-direction: column;
+  }
+
+  .debtCardActions button {
+    width: 100%;
+  }
+}

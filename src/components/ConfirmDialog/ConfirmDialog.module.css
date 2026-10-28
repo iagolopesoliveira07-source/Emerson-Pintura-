@@ -1,0 +1,40 @@
+.message {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0 0 1rem;
+  overflow-wrap: anywhere;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  min-width: 0;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.detailLabel {
+  color: var(--color-text-secondary);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.detailValue {
+  font-weight: 500;
+  text-align: right;
+  flex-shrink: 0;
+  max-width: 55%;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}

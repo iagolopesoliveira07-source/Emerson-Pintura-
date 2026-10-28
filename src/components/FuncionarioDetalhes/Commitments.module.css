@@ -1,0 +1,270 @@
+.historySummary {
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.descontoIntro {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0 0 1.25rem;
+}
+
+.descontoError {
+  color: var(--color-danger, #b91c1c);
+  font-size: 0.875rem;
+  margin: 0 0 1rem;
+}
+
+.descontoGroup {
+  margin-bottom: 1.5rem;
+}
+
+.descontoGroupTitle {
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  margin: 0 0 0.75rem;
+}
+
+.descontoCard {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 8px);
+  padding: 0.875rem 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.descontoCardHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.descontoCardTitle {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.descontoCardMeta {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 0.15rem;
+}
+
+.descontoCardFacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.historyText {
+  flex: 1;
+}
+
+.historyCheck {
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.emptyHistory {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.nextParcela {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.tipoSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tipoOption {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.fieldHint {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.parcelaPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-md, 8px);
+  background: var(--color-bg-muted, #f4f4f5);
+  border: 1px solid var(--color-border, #e4e4e7);
+}
+
+.parcelaPreviewTitle {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.parcelaPreviewValue {
+  font-size: 1.125rem;
+  color: var(--color-text);
+}
+
+.parcelaPreviewHint {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.resumoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.resumoItem {
+  background: var(--color-bg-muted, #f4f4f5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 8px);
+  padding: 0.75rem 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.resumoLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+.resumoValue {
+  font-size: 1.05rem;
+  color: var(--color-primary-dark);
+}
+
+.descontoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.descontoRow {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 8px);
+  background: var(--color-bg-card);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.descontoRow:hover {
+  border-color: var(--color-primary);
+}
+
+.descontoRowMain {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  flex: 1;
+}
+
+.descontoRowMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tipoChip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.descontoValor {
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.descontoLoanLine {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.mesStatus {
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.mesStatusOk {
+  color: var(--color-success, #15803d);
+}
+
+.mesStatusPending {
+  color: #c2410c;
+}
+
+.mesStatusDone {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+  .resumoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .descontoRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

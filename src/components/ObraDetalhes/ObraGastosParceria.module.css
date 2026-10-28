@@ -1,0 +1,232 @@
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.65rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.85rem;
+  align-items: stretch;
+}
+
+.col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #faf8fd;
+  border: 1px solid #eee8f6;
+  border-radius: 12px;
+  padding: 0.7rem 0.65rem 0.8rem;
+}
+
+.title {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.empty {
+  margin: 0;
+  padding: 0.85rem 0.4rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  column-gap: 0.45rem;
+  min-width: 0;
+  padding: 0.38rem 0.1rem;
+  border-bottom: 1px solid #eee8f6;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.date {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.desc {
+  font-size: 0.78rem;
+  color: var(--color-text);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.valor {
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.acoes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.05rem;
+  flex-shrink: 0;
+}
+
+.iconBtn {
+  min-height: 1.6rem !important;
+  min-width: 1.6rem;
+  padding: 0.1rem !important;
+  gap: 0 !important;
+  color: var(--color-text-secondary);
+}
+
+.iconBtn:last-child {
+  color: var(--color-danger);
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.7rem;
+  border-top: 1px solid #eee8f6;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.totalValue {
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.pessoaResumo {
+  margin-top: auto;
+  padding-top: 0.7rem;
+  border-top: 1px solid #eee8f6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.resumoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  color: var(--color-text-secondary);
+}
+
+.resumoRow span:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.resumoTotal {
+  margin-top: 0.2rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid #eee8f6;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.resumoTotal span:last-child {
+  color: var(--color-primary);
+}
+
+.resumoNota {
+  margin: 0;
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: right;
+}
+
+.labor {
+  margin-top: 1.15rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #eee8f6;
+}
+
+.laborTitle {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.laborHint {
+  margin: 0 0 0.65rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.laborList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.laborRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto auto auto;
+  gap: 0.55rem;
+  align-items: baseline;
+  padding: 0.38rem 0.1rem;
+  border-bottom: 1px solid #eee8f6;
+  font-size: 0.8rem;
+}
+
+.laborRow:last-child {
+  border-bottom: none;
+}
+
+.laborHead {
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.laborNome {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.laborTotal {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary-dark);
+  text-align: right;
+}

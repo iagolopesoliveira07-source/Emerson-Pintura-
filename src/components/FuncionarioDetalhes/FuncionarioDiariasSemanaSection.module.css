@@ -1,0 +1,84 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.semanaBlock {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-card);
+  overflow: hidden;
+}
+
+.semanaHeadStatic {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.85rem;
+  padding: 0.7rem 0.85rem 0.45rem;
+}
+
+.semanaTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.semanaMeta {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.semanaStatus {
+  flex: 0 0 auto;
+}
+
+.diariaList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.diariaRow {
+  display: grid;
+  grid-template-columns: 6.5rem 5.8rem minmax(0, 1fr) auto auto;
+  gap: 0.45rem;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-top: 1px solid var(--color-border-light);
+  font-size: 0.85rem;
+}
+
+.diariaDate {
+  font-variant-numeric: tabular-nums;
+}
+
+.diariaValor {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.diariaObs {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.diariaAcoes {
+  display: inline-flex;
+  gap: 0.25rem;
+  justify-content: flex-end;
+}
+
+.emptyText {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .diariaRow {
+    grid-template-columns: 5.6rem minmax(0, 1fr) auto;
+  }
+}

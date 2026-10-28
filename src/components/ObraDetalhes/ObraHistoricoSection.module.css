@@ -1,0 +1,170 @@
+.section {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotEntrada {
+  background: var(--color-success);
+}
+
+.dotSaida {
+  background: var(--color-danger);
+}
+
+.dotInfo {
+  background: var(--color-text-muted);
+}
+
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+}
+
+.resumoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.resumoLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.resumoValue {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.resumoEntrada {
+  color: var(--color-success);
+}
+
+.resumoSaida {
+  color: var(--color-danger);
+}
+
+.resumoSaldo {
+  color: var(--color-primary);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--radius-md);
+  border-left: 3px solid transparent;
+  font-size: 0.875rem;
+}
+
+.itemEntrada {
+  background: var(--color-success-light);
+  border-left-color: var(--color-success);
+}
+
+.itemSaida {
+  background: var(--color-danger-light);
+  border-left-color: var(--color-danger);
+}
+
+.itemInfo {
+  background: var(--color-bg);
+  border-left-color: var(--color-text-muted);
+}
+
+.itemMain {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.itemDesc {
+  font-weight: 500;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.itemMeta {
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.itemValor {
+  font-weight: 600;
+  display: block;
+}
+
+.itemValorEntrada {
+  color: var(--color-success);
+}
+
+.itemValorSaida {
+  color: var(--color-danger);
+}
+
+.itemValorInfo {
+  color: var(--color-text-secondary);
+}
+
+.itemData {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.125rem;
+}
+
+.empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 1.5rem;
+  font-size: 0.875rem;
+}

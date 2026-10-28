@@ -1,0 +1,91 @@
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-card);
+  min-width: 0;
+}
+
+.table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.table th {
+  text-align: left;
+  padding: 0.625rem 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.table td {
+  padding: 0.75rem 0.875rem;
+  border-bottom: 1px solid var(--color-border-light);
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 240px;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr {
+  transition: background var(--transition);
+}
+
+.table tbody tr:hover {
+  background: var(--color-bg);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.thInner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.tableWrapperCompact {
+  border-radius: 8px;
+}
+
+.tableCompact {
+  min-width: 0;
+  font-size: 0.72rem;
+}
+
+.tableCompact th,
+.tableCompact td {
+  padding: 0.4rem 0.45rem;
+  max-width: none;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    padding: 0.5rem 0.625rem;
+    font-size: var(--text-xs);
+  }
+
+  .table td {
+    max-width: 180px;
+  }
+}

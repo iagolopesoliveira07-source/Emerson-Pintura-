@@ -1,0 +1,357 @@
+.tipoBadgeWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.tipoBadge {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.panel {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1.2rem;
+  min-width: 0;
+}
+
+.hint {
+  margin: 0 0 1rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.stat {
+  background: #faf8fd;
+  border: 1px solid #eee8f6;
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+}
+
+.stat span {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.stat strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.statHighlight {
+  background: #f3eefc;
+  border-color: #d8c8f0;
+}
+
+.statAlert {
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+
+.statAlert strong {
+  color: #c2410c;
+}
+
+.acordo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.acordoRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.acordoRow strong {
+  text-align: right;
+}
+
+.acordoTotal {
+  padding-top: 0.45rem;
+  margin-top: 0.15rem;
+  border-top: 1px solid #eee8f6;
+  font-weight: 700;
+}
+
+.acordoLucro {
+  padding-top: 0.45rem;
+  margin-top: 0.15rem;
+  border-top: 1px solid #d8c8f0;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.acordoLucro strong,
+.acordoTotal strong {
+  font-size: 1.05rem;
+}
+
+.repassesList {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.repassesList li {
+  display: grid;
+  grid-template-columns: 7rem 5.5rem minmax(0, 1fr) auto auto;
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.repasseDest {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.repasseAcoes {
+  display: inline-flex;
+  gap: 0.1rem;
+  justify-content: flex-end;
+}
+
+.repassesList li.repasseLinha {
+  grid-template-columns: 7rem minmax(0, 1fr) auto auto;
+}
+
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.iconBtn:hover {
+  background: #fdecec;
+  color: #b42318;
+}
+
+.repassesList li:last-child {
+  border-bottom: 0;
+}
+
+.repassesList strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.progressWrap {
+  margin: 0.35rem 0 1rem;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.filterBtn {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+  font-size: 0.75rem;
+}
+
+.filterBtnActive {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light, #eff6ff);
+  color: var(--color-primary);
+}
+
+.ledgerDesktop {
+  display: block;
+}
+
+.ledgerMobile {
+  display: none;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.movimento {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+  background: var(--color-bg);
+}
+
+.movimentoTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.movimentoDesc {
+  font-weight: 600;
+}
+
+.entrada {
+  color: #047857;
+  font-weight: 700;
+}
+
+.saida {
+  color: #b45309;
+  font-weight: 700;
+}
+
+.movimentoMeta {
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.equipaList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.equipaRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.acertoSub {
+  margin: 1.15rem 0 0.4rem;
+  font-size: 0.92rem;
+}
+
+.acertoTableWrap {
+  overflow-x: auto;
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.acertoTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.acertoTable th,
+.acertoTable td {
+  padding: 0.45rem 0.7rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.acertoTable th {
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: #faf8fd;
+}
+
+.acertoTable tr:last-child td {
+  border-bottom: 0;
+}
+
+.acertoTable td:last-child,
+.acertoTable th:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.acertosList {
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.acertosList li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+@media (max-width: 720px) {
+  .ledgerDesktop {
+    display: none;
+  }
+
+  .ledgerMobile {
+    display: flex;
+  }
+
+  .acordoRow {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .acordoRow strong {
+    text-align: left;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}

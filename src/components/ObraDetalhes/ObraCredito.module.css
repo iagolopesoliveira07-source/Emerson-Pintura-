@@ -1,0 +1,809 @@
+.section {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  min-width: 0;
+}
+
+.alertBanner {
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.alertEncerrado {
+  background: #fee2e2;
+  border: 1px solid #ef4444;
+  color: #991b1b;
+}
+
+.alertExcedente {
+  background: #ffedd5;
+  border: 1px solid #f97316;
+  color: #9a3412;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.summaryItem {
+  padding: 0.875rem;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-muted, #f4f4f5);
+  border: 1px solid var(--color-border);
+}
+
+.summaryItem > span {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.metricLabelRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.metricLabel {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.summaryItem strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1rem;
+}
+
+.metricHint {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.summaryWarning {
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+
+.resultadoWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.disclaimer {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: #9a3412;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  border-radius: var(--radius-md);
+}
+
+.historicoEstimativaBox {
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: 1px dashed #fdba74;
+  border-radius: var(--radius-md);
+  background: #fffbeb;
+}
+
+.historicoEstimativaTitle {
+  margin: 0 0 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.analiseDesktop {
+  display: block;
+}
+
+.analiseMobile {
+  display: none;
+}
+
+.analiseCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.analiseCardTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.analiseCardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.625rem;
+  font-size: 0.875rem;
+}
+
+.analiseCardGrid span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.125rem;
+}
+
+.resultadoMuted {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.controleCustosBox {
+  margin-top: 0.75rem;
+  padding: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-muted, #f4f4f5);
+}
+
+.controleCustosBox p {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.radioOption input {
+  margin-top: 0.2rem;
+  accent-color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .analiseDesktop {
+    display: none;
+  }
+
+  .analiseMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.summaryHighlight {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+.summarySaldo {
+  background: #ecfdf5;
+  border-color: #6ee7b7;
+}
+
+.summarySaldoEsgotado {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+
+.valorPositivo {
+  color: #059669;
+}
+
+.valorNegativo {
+  color: #dc2626;
+}
+
+.excedenteCell {
+  color: #c2410c;
+  font-weight: 600;
+}
+
+.actionsCell {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.detailPanel {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem 1rem;
+}
+
+.detailRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.detailValue {
+  font-size: 0.875rem;
+}
+
+.nestedSections {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hint {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0 0 1rem;
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.resumoCredito,
+.sheetBlock {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.15rem;
+  min-width: 0;
+}
+
+.sheetTitle {
+  margin: 0 0 0.85rem;
+  font-size: 0.9375rem;
+  font-weight: 650;
+  color: var(--color-primary-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sheetHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.sheetHeader .sheetTitle {
+  margin: 0;
+}
+
+.ledgerResumo {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.ledgerResumo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.ledgerResumo span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.ledgerResumo strong {
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.ledgerSaldo strong {
+  font-size: 1.2rem;
+}
+
+.progressWrap {
+  margin-top: 0.85rem;
+}
+
+.progressCaption {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.conferenciaDiscreta {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.conferenciaDiscreta p {
+  margin: 0 0 0.25rem;
+}
+
+.conferenciaDetalhe {
+  margin: 0.65rem 0 0;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.conferenciaDetalhe div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8125rem;
+}
+
+.conferenciaDetalhe dt {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.conferenciaDetalhe dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.linkButton {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--color-primary);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.linkButton:hover {
+  color: var(--color-primary-dark);
+}
+
+.sheetDesktop :global(table) {
+  min-width: 0;
+}
+
+.sheetDesktop :global(td),
+.sheetDesktop :global(th) {
+  font-variant-numeric: tabular-nums;
+}
+
+.sheetMobile {
+  display: none;
+}
+
+.sheetCard {
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 0.7rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sheetCard:first-child {
+  padding-top: 0;
+}
+
+.sheetCard strong {
+  font-size: 0.9rem;
+}
+
+.sheetCardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 0.75rem;
+}
+
+.sheetCardGrid span {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.sheetCardGrid b {
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.andamentoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.andamentoCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.andamentoCard:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.andamentoCard div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.andamentoCard span {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.andamentoCard b {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.875rem;
+}
+
+.custoLinha {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.servicoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.servicoCard {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.servicoCardHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.servicoCardHead strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.servicoStatus {
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.servicoObs {
+  margin: 0.35rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.servicoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: 0.55rem 0.75rem;
+}
+
+.servicoGrid span {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.servicoGrid b {
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.docsTitle {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  font-weight: 650;
+  color: var(--color-primary-dark);
+}
+
+.statsMini {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.65rem 1rem;
+  margin-top: 0.9rem;
+}
+
+.statsMini span {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.statsMini b {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.servicoCardCompact {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.servicoCardButton {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.85rem 0.9rem;
+  border: none;
+  background: transparent;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.servicoCardButton:hover,
+.servicoCardButton:focus-visible {
+  background: var(--color-bg);
+  outline: none;
+}
+
+.servicoAcao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem 0.7rem;
+  border-top: 1px solid var(--color-border-light);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.servicoStatusRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.compactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.45rem 0.7rem;
+  margin-top: 0.7rem;
+}
+
+.compactGrid span {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+}
+
+.compactGrid b {
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.pickerToolbar,
+.unassignedToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.75rem;
+  align-items: center;
+}
+
+.selectInline {
+  min-width: 14rem;
+  max-width: 100%;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-card);
+  color: inherit;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.pickerList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-height: 18rem;
+  overflow: auto;
+  padding-right: 0.15rem;
+}
+
+.pickerRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.pickerMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  min-width: 0;
+}
+
+.pickerMeta em {
+  font-style: normal;
+  color: var(--color-text-muted);
+}
+
+.moveConfirm {
+  margin-top: 0.85rem;
+  padding: 0.75rem;
+  border: 1px solid #fdba74;
+  background: #fff7ed;
+  border-radius: var(--radius-md);
+}
+
+.moveConfirm ul {
+  margin: 0.4rem 0 0.75rem;
+  padding-left: 1.1rem;
+}
+
+.detailBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.tabRow {
+  display: flex;
+  gap: 0.35rem;
+  margin: 1rem 0 0.75rem;
+}
+
+.tabBtn {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.tabBtnActive {
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+}
+
+.reportTableWrap {
+  overflow: auto;
+}
+
+.reportTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.reportTable th,
+.reportTable td {
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid var(--color-border-light);
+  vertical-align: top;
+}
+
+.reportTable th {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .ledgerResumo {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .sheetDesktop {
+    display: none;
+  }
+
+  .sheetMobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .andamentoCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

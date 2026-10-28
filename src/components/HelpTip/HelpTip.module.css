@@ -1,0 +1,52 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: help;
+  vertical-align: middle;
+  line-height: 0;
+  opacity: 0.72;
+  transition: color 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+.trigger:hover,
+.trigger:focus-visible,
+.triggerOpen {
+  color: var(--color-primary);
+  opacity: 1;
+  background: var(--color-primary-light);
+  outline: none;
+}
+
+.bubble {
+  position: fixed;
+  z-index: 1200;
+  max-width: 17.5rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  background: var(--color-primary-dark);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+}
+
+.inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  min-width: 0;
+}

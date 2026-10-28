@@ -1,0 +1,124 @@
+.resumoBar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--color-bg-muted, #f8fafc);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.resumoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.resumoLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.resumoValue {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.saldoDestaque {
+  color: #c2410c;
+  font-weight: 700;
+}
+
+.paymentSummary {
+  background: var(--color-bg-muted, #f8fafc);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.paymentSummaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.paymentSummaryGrid span {
+  display: block;
+  font-size: var(--text-xs);
+  margin-bottom: 0.125rem;
+}
+
+.paymentSummaryGrid strong {
+  color: var(--color-text);
+}
+
+.paymentHint {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+.parcelaLabel {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.mobileCards {
+  display: none;
+}
+
+.paymentCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.paymentCardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.625rem;
+  font-size: var(--text-sm);
+}
+
+.paymentCardGrid span {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: 0.125rem;
+}
+
+@media (max-width: 900px) {
+  .resumoBar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .desktopTable {
+    display: none;
+  }
+
+  .mobileCards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .resumoBar {
+    grid-template-columns: 1fr;
+  }
+
+  .paymentSummaryGrid {
+    grid-template-columns: 1fr;
+  }
+}

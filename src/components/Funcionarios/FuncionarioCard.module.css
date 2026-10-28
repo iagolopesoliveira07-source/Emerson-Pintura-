@@ -1,0 +1,98 @@
+.paymentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  border-radius: var(--radius-md, 10px);
+  background: var(--color-bg, #f8fafc);
+  border: 1px solid var(--color-border-light, #eef2f7);
+}
+
+.diariaValue {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+}
+
+.frequencia {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+.periodLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.statusPaid,
+.statusPending {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.statusPaid {
+  color: var(--color-success, #16a34a);
+}
+
+.statusPending {
+  color: var(--color-warning, #d97706);
+}
+
+.acertoHint {
+  font-size: 0.75rem;
+  color: var(--color-warning, #d97706);
+  margin-bottom: 0.5rem;
+}
+
+.periodStats {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 0.5rem;
+  line-height: 1.4;
+}
+
+.cardPaid {
+  border-left: 4px solid var(--color-success, #16a34a);
+}
+
+.cardPending {
+  border-left: 4px solid var(--color-warning, #d97706);
+}
+
+.cardParceiro {
+  border-left: 4px solid var(--color-primary, #2e1a47);
+}
+
+.sectionBlock {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: var(--color-text-primary);
+}
+
+.sectionCount {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 1rem;
+}
+
+.emptySection {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  padding: 0.5rem 0 1rem;
+}

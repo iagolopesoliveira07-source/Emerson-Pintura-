@@ -1,0 +1,278 @@
+.fecharBtnWrap {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border, #e4e4e7);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.semPendentes {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.previewList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.previewRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  gap: 0.75rem;
+}
+
+.previewRow span:last-child {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.previewTotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--color-border, #e4e4e7);
+  color: var(--color-primary);
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.checkboxItem input {
+  margin-top: 0.2rem;
+}
+
+.descontoOpcao {
+  border: 1px solid var(--color-border, #e4e4e7);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.descontoMeta {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  margin-top: 0.15rem;
+}
+
+.tipoGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.tipoOption {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.infoText {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-top: 0.75rem;
+}
+
+.negativo {
+  color: var(--color-danger, #dc2626);
+}
+
+.positivo {
+  color: var(--color-success, #16a34a);
+}
+
+.semanaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.semanaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.semanaOption {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--color-border, #e4e4e7);
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.semanaOption:has(input:checked) {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light, #eff6ff);
+  color: var(--color-primary);
+}
+
+.semanaOption input {
+  margin: 0;
+}
+
+.pendentesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pendenteItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-border, #e4e4e7);
+  border-radius: var(--radius-md, 10px);
+  background: var(--color-bg, #f8fafc);
+  flex-wrap: wrap;
+}
+
+.pendenteInfo {
+  min-width: 0;
+  flex: 1;
+}
+
+.pendenteDesc {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  margin-bottom: 0.25rem;
+}
+
+.pendenteMeta {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.pendenteActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.weekList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.weekGroup {
+  border: 1px solid var(--color-border, #e4e4e7);
+  border-radius: var(--radius-md, 10px);
+  padding: 0.75rem 0.9rem;
+  background: var(--color-bg, #f8fafc);
+}
+
+.weekHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.weekDiarias {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.weekDiariaItem {
+  margin: 0;
+}
+
+.weekDiariaLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+}
+
+.weekDiariaLabel input {
+  margin-top: 0.2rem;
+}
+
+.weekDiariaMain {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.weekDiariaDate {
+  font-weight: 600;
+}
+
+.previewRowWrap span:last-child {
+  white-space: normal;
+  text-align: right;
+}
+
+.sectionLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin: 0.75rem 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.pagamentosLista {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pagamentoValor {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 720px) {
+  .tableDesktop {
+    display: none;
+  }
+
+  .pagamentosLista {
+    display: flex;
+  }
+}

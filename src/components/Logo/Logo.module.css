@@ -1,0 +1,61 @@
+.logo {
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.sm {
+  height: 32px;
+  width: auto;
+}
+
+.md {
+  height: 40px;
+  width: auto;
+}
+
+.lg {
+  height: 52px;
+  width: auto;
+  max-width: 260px;
+}
+
+.xl {
+  height: 64px;
+  width: auto;
+  max-width: 280px;
+}
+
+.sidebar {
+  width: 100%;
+  height: auto;
+  max-height: 65px;
+  max-width: 100%;
+  object-position: center;
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    max-height: 58px;
+  }
+}
+
+.centered {
+  object-position: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .lg {
+    height: 48px;
+    max-width: 240px;
+  }
+
+  .xl {
+    height: 56px;
+    max-width: 240px;
+  }
+}

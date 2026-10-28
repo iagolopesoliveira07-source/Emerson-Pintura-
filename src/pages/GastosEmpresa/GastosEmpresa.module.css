@@ -1,0 +1,993 @@
+.resumoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
+  gap: 0.75rem;
+}
+
+.resumoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.resumoCard span {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+}
+
+.resumoCard strong {
+  font-size: 1.125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.pago {
+  color: var(--color-success);
+}
+
+.pendente {
+  color: var(--color-warning);
+}
+
+.previsto {
+  color: var(--color-info);
+}
+
+.nota {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.sectionTitle {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.compromissos {
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.compromissoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.compromissoItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+.compromissoItem div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.compromissoItem span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.compromissoValor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.compromissoVencido {
+  border-color: var(--color-danger);
+  background: var(--color-danger-light);
+}
+
+.categoriaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
+  gap: 0.75rem;
+}
+
+.categoriaCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 0.875rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+.categoriaCard span {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.categoriaCard strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.descCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.descMain {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.descMeta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.valorCell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.valorCell small {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.resumoLinha {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem 1.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.resumoLinha div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.resumoLinha dt {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.resumoLinha dd {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.listaSimples {
+  margin-bottom: 1.5rem;
+}
+
+.listaCabeca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.linhas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linhas li + li {
+  border-top: 1px solid var(--color-border);
+}
+
+.linhaBtn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.linhaBtn small {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+.linhaEstatica {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+}
+
+.atalhos,
+.atalhosTexto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.atalhosTexto button {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--color-primary-dark);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.maisConsultas {
+  margin: 0.5rem 0 1.25rem;
+}
+
+.maisConsultas summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.linkVoltar {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--color-primary-dark);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.linhaFixa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.linhaFixa span {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+.linhaFixaAcoes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tab {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  padding: 0.45rem 0.8rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.tabActive {
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .resumoLinha {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .linhaFixa,
+  .linhaBtn {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.tabQuiet {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+.undoBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-success-light);
+  color: var(--color-success);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.lixeiraBox {
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-card);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.lixeiraList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.lixeiraItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+.lixeiraItem > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.lixeiraItem span {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+.lixeiraMeta {
+  color: var(--color-text-muted);
+}
+
+.veiculoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 0.75rem;
+}
+
+.veiculoCard {
+  padding: 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.veiculoCard h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.veiculoActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.veiculoCustos {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.veiculoCustos li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.veiculoCustos strong {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.veiculoTotal {
+  margin-top: 0.2rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--color-border-light);
+  color: var(--color-text) !important;
+  font-weight: 600;
+}
+
+.detailBox {
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 0.85rem;
+}
+
+.infoCard {
+  padding: 1rem 1.1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.infoCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.infoCard h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.infoValor {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.fieldRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.fieldRow strong {
+  color: var(--color-text);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.fieldEmphasize {
+  color: var(--color-text);
+}
+
+.fieldEmphasize strong {
+  font-size: 0.9375rem;
+}
+
+.cardNota {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+.recuperarBox {
+  margin-top: 0.35rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-warning);
+  background: var(--color-warning-light, var(--color-bg));
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.grupoTitulo {
+  margin: 1.25rem 0 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.historicoList {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0 0;
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.historicoList li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.historicoList strong {
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.fixoGrupo {
+  margin: 0 0 1.15rem;
+}
+
+.fixoLista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fixoLinha {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.85rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.8rem 0.9rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+.fixoLinha:hover,
+.fixoLinha:focus-visible {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.fixoLinhaTexto {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.fixoLinhaTitulo {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.fixoLinhaTopo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.fixoLinhaDia {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.fixoLinhaRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.fixoLinhaMeta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+}
+
+.fixoLinhaValor {
+  flex-shrink: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.totalPeriodo {
+  padding: 1rem 1.15rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.totalPeriodo span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.totalPeriodo strong {
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.variavelItem {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.variavelLinha {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.85rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.7rem 0.85rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+.variavelItem .variavelLinha {
+  flex: 1;
+  min-width: 0;
+}
+
+.variavelLinha:hover,
+.variavelLinha:focus-visible {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.detalheBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.agenda {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.agendaHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.agendaNav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+
+.agendaNavBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.agendaNavMeses {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.35rem;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.agendaNavSide {
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  cursor: pointer;
+  padding: 0.2rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.agendaNavSide:first-of-type {
+  text-align: right;
+}
+
+.agendaNavSide:last-of-type {
+  text-align: left;
+}
+
+.agendaNavAtual {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.agendaHoje {
+  border: 0;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.25rem 0.4rem;
+}
+
+.agendaResumo {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.agendaResumoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.8rem 0.75rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.agendaResumoCard span {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+}
+
+.agendaResumoCard strong {
+  font-size: clamp(0.95rem, 3.4vw, 1.15rem);
+  font-variant-numeric: tabular-nums;
+}
+
+.agendaAtrasoValor {
+  color: var(--color-danger);
+}
+
+.agendaSecao,
+.agendaSecaoAtraso {
+  padding: 0.9rem 0.95rem 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.agendaSecaoAtraso {
+  border-color: var(--color-danger);
+  background: var(--color-danger-light);
+}
+
+.agendaLista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.agendaCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.agendaCardAtraso {
+  border-color: var(--color-danger);
+}
+
+.agendaCardMain {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.15rem;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.agendaCardTopo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.agendaCardTopo h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.agendaValor {
+  margin: 0.1rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.agendaMeta,
+.agendaVence,
+.agendaAtraso {
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+.agendaMeta {
+  color: var(--color-text-muted);
+}
+
+.agendaVence {
+  font-weight: 650;
+  color: var(--color-text);
+}
+
+.agendaAtraso {
+  font-weight: 650;
+  color: var(--color-danger);
+}
+
+.agendaCardAcao {
+  display: flex;
+}
+
+.agendaSemData {
+  margin-top: 0.35rem;
+}
+
+.caixaResumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.resumoDestaque {
+  border-color: var(--color-primary);
+}
+
+.analiticoTag {
+  display: inline-block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-info, var(--color-primary));
+}
+
+.mediaVariavel {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.mediaVariavel strong {
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.docMark {
+  font-size: 0.875rem;
+}
+
+.docFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+button.docStat {
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+button.docStatActive {
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 520px) {
+  .agendaResumo {
+    grid-template-columns: 1fr;
+  }
+
+  .agendaNavSide {
+    font-size: 0.65rem;
+  }
+}

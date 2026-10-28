@@ -1,0 +1,15 @@
+# Local env (never commit)
+.env
+.env.local
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+
+# Logs
+*.log
+
+# Cópias locais de segurança (não fazem parte da aplicação)
+backups/
