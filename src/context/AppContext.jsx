@@ -1,4 +1,14 @@
 import { createContext, useContext, useReducer, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
+import { useAuth } from './AuthContext';
+import { useSharedSystem } from '../lib/supabase';
+import {
+  applyEstadoLocal,
+  collectLocalEstado,
+  estadoTemDados,
+  guardarEstadoRemoto,
+  lerEstadoRemoto,
+} from '../services/estadoService';
+import { clearSession } from '../services/authService';
 import STORAGE_KEYS, {
   getStorageItem,
   setStorageItem,
@@ -340,8 +350,42 @@ function initState() {
   ));
 }
 
+function emptyLoadingState() {
+  return {
+    obras: [],
+    funcionarios: [],
+    diarias: [],
+    adiantamentos: [],
+    emprestimos: [],
+    valoresAcerto: [],
+    gastos: [],
+    gastosEmpresa: [],
+    gastosEmpresaCategorias: null,
+    empresaVeiculos: [],
+    empresaDespesasProgramadas: [],
+    empresaValoresRecuperar: [],
+    empresaFinanceiroSeedKeys: [],
+    empresaFornecedores: [],
+    empresaIvaRegras: [],
+    ivaEntregar: [],
+    pagamentos: [],
+    fechamentosPagamento: [],
+    hotelDommeControles: [],
+    configuracoes: null,
+    loading: true,
+    loadError: null,
+  };
+}
+
+function createInitialState() {
+  if (useSharedSystem) return emptyLoadingState();
+  return initState();
+}
+
 function reducer(state, action) {
   switch (action.type) {
+    case 'REPLACE_STATE':
+      return action.payload;
     case 'SET_OBRAS':
       return { ...state, obras: action.payload };
     case 'ADD_OBRA':
@@ -737,17 +781,78 @@ function reducer(state, action) {
 }
 
 export function AppProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer, null, initState);
-  const hydratedRef = useRef(false);
+  const { isAuthenticated, loading: authLoading } = useAuth();
+  const [state, dispatch] = useReducer(reducer, null, createInitialState);
+  const hydratedRef = useRef(!useSharedSystem);
+  const remoteReadyRef = useRef(false);
+  const saveTimerRef = useRef(null);
 
   useLayoutEffect(() => {
     compactBackupArchive();
-    hydratedRef.current = true;
+    if (!useSharedSystem) hydratedRef.current = true;
   }, []);
+
+  useEffect(() => {
+    if (!useSharedSystem) return undefined;
+    if (authLoading) return undefined;
+    let active = true;
+
+    (async () => {
+      if (!isAuthenticated) {
+        remoteReadyRef.current = false;
+        hydratedRef.current = false;
+        return;
+      }
+
+      try {
+        const remote = await lerEstadoRemoto();
+        if (!active) return;
+        if (estadoTemDados(remote)) {
+          applyEstadoLocal(remote);
+          remoteReadyRef.current = true;
+        } else {
+          remoteReadyRef.current = false;
+        }
+        hydratedRef.current = true;
+        dispatch({ type: 'REPLACE_STATE', payload: { ...initState(), loadError: null } });
+      } catch (error) {
+        console.error('[estado] Falha ao carregar os dados de produção:', error);
+        if (!active) return;
+        const message = String(error?.message || '');
+        if (message.includes('Sessão expirada')) {
+          clearSession();
+          window.location.assign('/login');
+          return;
+        }
+        remoteReadyRef.current = false;
+        hydratedRef.current = true;
+        dispatch({
+          type: 'REPLACE_STATE',
+          payload: {
+            ...emptyLoadingState(),
+            loading: false,
+            loadError: 'Não foi possível carregar os dados. Atualize a página.',
+          },
+        });
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, [authLoading, isAuthenticated]);
 
   useEffect(() => {
     if (!hydratedRef.current) return;
     persistOfficialState(state);
+    if (!useSharedSystem || !remoteReadyRef.current || state.loading) return undefined;
+    clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(() => {
+      guardarEstadoRemoto(collectLocalEstado()).catch((error) => {
+        console.error('[estado] Falha ao guardar os dados em produção:', error);
+      });
+    }, 800);
+    return () => clearTimeout(saveTimerRef.current);
   }, [state]);
 
   useEffect(() => {

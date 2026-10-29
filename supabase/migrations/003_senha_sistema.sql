@@ -1,7 +1,13 @@
 -- Senha única do sistema. Não fica no navegador.
 -- Executar depois de 002_rls_policies.sql
 
-create extension if not exists pgcrypto with schema extensions;
+do $$
+begin
+  create extension if not exists pgcrypto with schema extensions;
+exception
+  when duplicate_object then
+    null;
+end $$;
 
 create table if not exists public.app_senha (
   id int primary key default 1 check (id = 1),
@@ -37,7 +43,7 @@ begin
   end if;
 
   insert into public.app_senha (id, password_hash)
-  values (1, extensions.crypt(senha, extensions.gen_salt('bf')));
+  values (1, crypt(senha, gen_salt('bf')));
   return true;
 exception
   when unique_violation then
@@ -56,7 +62,7 @@ as $$
     select 1
     from public.app_senha
     where id = 1
-      and password_hash = extensions.crypt(senha, password_hash)
+      and password_hash = crypt(senha, password_hash)
   );
 $$;
 
@@ -76,7 +82,7 @@ begin
   end if;
 
   update public.app_senha
-  set password_hash = extensions.crypt(senha_nova, extensions.gen_salt('bf')),
+  set password_hash = crypt(senha_nova, gen_salt('bf')),
       configured_at = now()
   where id = 1;
   return true;
@@ -92,3 +98,5 @@ grant execute on function public.senha_esta_configurada() to anon, authenticated
 grant execute on function public.definir_senha(text) to anon, authenticated;
 grant execute on function public.entrar_com_senha(text) to anon, authenticated;
 grant execute on function public.alterar_senha(text, text) to anon, authenticated;
+
+notify pgrst, 'reload schema';

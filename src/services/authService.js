@@ -1,5 +1,6 @@
-import { supabase, isSupabaseConfigured } from '../lib/supabase';
+import { supabase, useSharedSystem } from '../lib/supabase';
 import { getStorageItem, setStorageItem } from './storageService';
+import { SESSION_TOKEN_KEY } from './estadoService';
 
 export const AUTH_STORAGE_KEY = 'emerson_pinturas_auth';
 const SESSION_STORAGE_KEY = 'emerson_pinturas_session';
@@ -51,7 +52,7 @@ function saveAuthConfig(config) {
 }
 
 function useRemoteAuth() {
-  return Boolean(isSupabaseConfigured && supabase);
+  return Boolean(useSharedSystem && supabase);
 }
 
 export async function isPasswordConfigured() {
@@ -67,7 +68,10 @@ export async function isPasswordConfigured() {
 
 export function isSessionActive() {
   try {
-    return sessionStorage.getItem(SESSION_STORAGE_KEY) === 'active';
+    const active = sessionStorage.getItem(SESSION_STORAGE_KEY) === 'active';
+    if (!active) return false;
+    if (useRemoteAuth()) return Boolean(sessionStorage.getItem(SESSION_TOKEN_KEY));
+    return true;
   } catch {
     return false;
   }
@@ -79,6 +83,19 @@ export function createSession() {
 
 export function clearSession() {
   sessionStorage.removeItem(SESSION_STORAGE_KEY);
+  try {
+    sessionStorage.removeItem(SESSION_TOKEN_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+async function openRemoteSession(password) {
+  const { data, error } = await supabase.rpc('abrir_sessao', { senha: password });
+  if (error || !data) {
+    throw new Error('Não foi possível abrir a sessão.');
+  }
+  sessionStorage.setItem(SESSION_TOKEN_KEY, data);
 }
 
 export async function setupPassword(password) {
@@ -90,6 +107,7 @@ export async function setupPassword(password) {
       already.code = 'already_configured';
       throw already;
     }
+    await openRemoteSession(password);
     createSession();
     return;
   }
@@ -123,6 +141,11 @@ export async function loginWithPassword(password) {
     const { data, error } = await supabase.rpc('entrar_com_senha', { senha: password });
     if (error) return { error: 'Não foi possível iniciar sessão.' };
     if (data !== true) return { error: 'Senha incorreta.' };
+    try {
+      await openRemoteSession(password);
+    } catch {
+      return { error: 'Não foi possível iniciar sessão.' };
+    }
     createSession();
     return { error: null };
   }
